@@ -22,3 +22,9 @@ Route::get('/login', function () {
 Route::get('/registro', function () {
     return view('registro.registro');
 });
+
+
+Route::group(['middleware' => 'web'], function () {
+    Route::get('dashboards', 'Desktop\DashboardsController@index');
+
+});
