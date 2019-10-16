@@ -10,7 +10,7 @@
    // {!!html::style('assets/css/login.css')!!;}
 ?>
 </head>
-<body>
+<body> 
 
 <div class="container-fluid">
   <div class="row no-gutter">
