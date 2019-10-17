@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/listado', 'ListadoController@index');
+Route::get('/formularios', 'FormularioController@index');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,8 +26,29 @@ Route::get('/registro', function () {
     return view('registro.registro');
 });
 
+Route::get('/menu', function ($nombre_administrador="Viviana Saavedra", $perfil= 'Cirujano') {
+    return view('menu.menu')->with('nombre_administrador', $nombre_administrador)
+                            ->with('perfil', $perfil);
+    })->where([
+        'nombre_administrador' => '[A-Za-z]+',
+        'edad' => '[0-9]+'
+        ]);
+
+
+
+//forma larga de enviar variables al template
+/*Route::get('/menu', function ($nombre_administrador="Víctor Tobar") {
+    return view('menu.menu', array(
+        "nombre_administrador" => $nombre_administrador
+    ));
+});*/
+
+
 
 Route::group(['middleware' => 'web'], function () {
     Route::get('dashboards', 'Desktop\DashboardsController@index');
 
 });
+
+
+
