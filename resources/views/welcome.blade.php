@@ -43,7 +43,7 @@
               Clave: <input id="inlineFormInputName2" type="email" placeholder="" class="form-control mb-2 mr-sm-2 transparent-bg">
               </div>
               <div class="row text-align: center"  >
-              <button type="submit" class="btn btn-primary letter-spacing-3 mb-2">Ingresar</button>
+              <a href="{{ action('MenuController@index') }}" class="btn btn-primary letter-spacing-3 mb-2">Ingresar</a>
               </div>
             </form>
           </div>
